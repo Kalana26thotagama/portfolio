@@ -1,27 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalana — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Kalana</a>
-        <nav>
-            <a href="#" class="logo">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Skills</a>
-            <a href="#">Education</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <section class="Home">
-        <div class="home-img">
-            <img src="" alt="">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#">Kalana</a>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Open navigation">☰</button>
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-    </section>
-    
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Hi, I am Kalana</h1>
+                    <p class="lead">A web developer who builds clean, accessible, and responsive websites.</p>
+                    <p>
+                        <a class="btn" href="#projects">See my work</a>
+                        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+                    </p>
+                </div>
+                <div class="hero-photo" aria-hidden="true">
+                    <!-- Placeholder circle photo -->
+                    <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile photo placeholder">
+                        <circle cx="110" cy="110" r="110" fill="#ddd" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#888" font-size="20">Your Photo</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container about">
+            <h2>About</h2>
+            <p>I build front-end web projects focusing on performance and accessibility. I enjoy learning new tools and improving user experiences.</p>
+            <ul class="skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="container projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <article class="card">
+                    <h3>Project One</h3>
+                    <p>Short description of the project. HTML, CSS, JS.</p>
+                    <p><a href="#" class="btn btn-sm">View</a></p>
+                </article>
+                <article class="card">
+                    <h3>Project Two</h3>
+                    <p>Short description of the project. Responsive UI.</p>
+                    <p><a href="#" class="btn btn-sm">View</a></p>
+                </article>
+                <article class="card">
+                    <h3>Project Three</h3>
+                    <p>Short description of the project. Accessibility improvements.</p>
+                    <p><a href="#" class="btn btn-sm">View</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container contact">
+            <h2>Contact</h2>
+            <p>If you'd like to work together or say hello, send a message below.</p>
+            <form id="contact-form" class="contact-form" novalidate>
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="name" required placeholder="Your name" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" required placeholder="you@example.com" />
+                </label>
+                <label>
+                    <span>Message</span>
+                    <textarea name="message" rows="5" required placeholder="A short message..."></textarea>
+                </label>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Send message</button>
+                </div>
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Kalana. Built with HTML, CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
